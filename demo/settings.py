@@ -13,12 +13,11 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # Note: may be turned to True in structured settings file
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -48,20 +47,12 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-
-DATABASES = {
+DATABASES = {   # expect this default to be overridden by structured settings
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite'),
     }
 }
-
-# Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
